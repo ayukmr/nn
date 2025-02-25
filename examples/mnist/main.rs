@@ -50,8 +50,8 @@ fn train_mnist() -> Result<()> {
         let mut losses = 0.0;
 
         for (label, input) in &train {
-            network.backprop(&input, &label);
-            losses += network.loss(&input, &label);
+            network.backprop(input, label);
+            losses += network.loss(input, label);
         }
 
         println!("———");
